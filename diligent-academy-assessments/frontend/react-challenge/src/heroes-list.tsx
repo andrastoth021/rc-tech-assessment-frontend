@@ -3,7 +3,7 @@ import {
   useState
 } from "react";
 import { callApi } from "./call-api";
-import { HeroesListItem } from "./heroes-list-item";
+import { HeroesListItem } from "./components/heroes-list-item";
 
 interface Hero {
   id: number,
