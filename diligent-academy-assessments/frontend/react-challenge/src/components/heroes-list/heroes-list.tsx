@@ -2,8 +2,9 @@ import {
   useEffect,
   useState
 } from "react";
-import { callApi } from "./call-api";
-import { HeroesListItem } from "./components/heroes-list-item";
+import { callApi } from "../../call-api";
+import { HeroesListItem } from "../heroes-list-item/heroes-list-item";
+import "./heroes-list.css";
 
 interface Hero {
   id: number,
@@ -34,15 +35,19 @@ function HeroesList() {
   if ( error ) return <h2>Error: {error}</h2>;
 
   return (
-    <>
-      <h2>Heroes</h2>
-      { heroes && heroes.map((hero: Hero) => {
-        return (
-          <HeroesListItem key={hero.id} id={hero.id} name={hero.name} isAvailable={hero.available} />
-        )
-      }
-      )}
-    </>
+      <>
+        <h2>Heroes</h2>
+        <div className="grid-container">
+          {heroes && heroes.map((hero: Hero) => {
+                return (
+                  <div className="grid-item" key={hero.id}>
+                    <HeroesListItem key={hero.id} id={hero.id} name={hero.name} isAvailable={hero.available}/>
+                  </div>
+                )
+              }
+          )}
+        </div>
+      </>
   );
 }
 

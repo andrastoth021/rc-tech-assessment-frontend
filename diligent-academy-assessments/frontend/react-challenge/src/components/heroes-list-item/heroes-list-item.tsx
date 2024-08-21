@@ -11,8 +11,8 @@ export function HeroesListItem({ id, name, isAvailable }: props) {
   const [available, setAvailable] = useState<boolean>(isAvailable);
 
   return (
-    <p className={"hero-item"} onClick={() => setAvailable(!available)}>
-      {id}. {name} | {available ? "Available" : "NOT available"}
+    <p className={available ? "available" : "non-available"} onClick={() => setAvailable(!available)}>
+      {id}. {name} {available ? '"Available"' : null}
     </p>
   );
 }

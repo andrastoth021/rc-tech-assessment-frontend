@@ -1,0 +1,10 @@
+.available {
+    color: green;
+}
+.non-available {
+    color: red;
+}
+
+p:hover {
+    cursor: pointer;
+}
