@@ -3,6 +3,7 @@ import {
   useState
 } from "react";
 import { callApi } from "./call-api";
+import { HeroesListItem } from "./heroes-list-item";
 
 interface Hero {
   id: number,
@@ -37,7 +38,7 @@ function HeroesList() {
       <h2>Heroes</h2>
       { heroes && heroes.map((hero: Hero) => {
         return (
-          <div key={hero.id}>{hero.id}. {hero.name}: {hero.available ? "Available" : "NOT available"}</div>
+          <HeroesListItem key={hero.id} id={hero.id} name={hero.name} isAvailable={hero.available} />
         )
       }
       )}
